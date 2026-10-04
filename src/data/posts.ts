@@ -13,6 +13,8 @@ export type Post = {
   excerpt: string;
   readingTime: string;
   tags: string[];
+  projectHref?: string;
+  projectLabel?: string;
   sections: PostSection[];
 };
 
@@ -26,6 +28,8 @@ export const posts: Post[] = [
     excerpt: "From AI content generation to campaign optimization, with explicit boundaries between actual and simulated analytics.",
     readingTime: "8 min read",
     tags: ["AI engineering", "FastAPI", "Machine learning", "n8n"],
+    projectHref: "/projects#nexmarket-ai",
+    projectLabel: "NexMarket AI",
     sections: [
       { type: "heading", title: "Why I built NexMarket AI" },
       { type: "paragraph", text: "Marketing campaign creation often means moving between a copywriting tool, a design tool, a social scheduler, an analytics dashboard, and a spreadsheet for prediction. That workflow makes it difficult to connect a campaign input to the decisions made later. NexMarket AI is an attempt to bring those stages into one AI-assisted marketing automation workflow." },
@@ -69,6 +73,8 @@ export const posts: Post[] = [
     excerpt: "A mobile-first full-stack e-commerce platform for product discovery, inventory management, and WhatsApp order handoff.",
     readingTime: "6 min read",
     tags: ["React", "Node.js", "PostgreSQL", "Full-stack"],
+    projectHref: "/projects#soosai-hardwares",
+    projectLabel: "Soosai Hardwares",
     sections: [
       { type: "heading", title: "The problem" },
       { type: "paragraph", text: "The business needed a simple way for customers to browse hardware products, understand what was available, and contact the shop from a phone. It also needed an administrative workflow that did not assume the person managing inventory would always be sitting at a desktop computer." },

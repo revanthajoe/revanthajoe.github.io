@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { StructuredData } from "@/components/StructuredData";
 import { getPostBySlug, posts } from "@/data/posts";
+import { absoluteUrl, createPageMetadata, siteName } from "@/lib/seo";
 
 type PostPageProps = {
   params: Promise<{ slug: string }>;
@@ -19,15 +21,12 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
     return {};
   }
 
-  return {
-    title: post.title,
+  return createPageMetadata({
+    title: `${post.title} — Revanth Ajoe`,
     description: post.description,
-    openGraph: {
-      title: post.title,
-      description: post.description,
-      type: "article",
-    },
-  };
+    path: `/posts/${post.slug}`,
+    type: "article",
+  });
 }
 
 export default async function PostPage({ params }: PostPageProps) {
@@ -40,6 +39,19 @@ export default async function PostPage({ params }: PostPageProps) {
 
   return (
     <article className="post-page">
+      <StructuredData
+        data={{
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          headline: post.title,
+          description: post.description,
+          datePublished: post.date,
+          dateModified: post.date,
+          author: { "@type": "Person", name: siteName, url: absoluteUrl("/") },
+          mainEntityOfPage: absoluteUrl(`/posts/${post.slug}`),
+          url: absoluteUrl(`/posts/${post.slug}`),
+        }}
+      />
       <div className="post-shell">
         <Link className="post-back" href="/posts">Writing <span aria-hidden="true">↖</span></Link>
         <header className="post-header">
@@ -47,6 +59,7 @@ export default async function PostPage({ params }: PostPageProps) {
           <h1>{post.title}</h1>
           <p className="post-meta">{post.date} <span aria-hidden="true">·</span> {post.readingTime}</p>
           <p className="post-intro">{post.intro}</p>
+          {post.projectHref && post.projectLabel && <Link className="text-link" href={post.projectHref}>Related project: {post.projectLabel} <span aria-hidden="true">↗</span></Link>}
         </header>
         <div className="post-content">
           {post.sections.map((section, index) => {

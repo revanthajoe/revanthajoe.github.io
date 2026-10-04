@@ -2,6 +2,9 @@ import Link from "next/link";
 import { profile } from "@/data/profile";
 import { ProjectList } from "@/components/ProjectList";
 import { SectionHeading } from "@/components/SectionHeading";
+import { createPageMetadata, siteDescription, siteTitle } from "@/lib/seo";
+
+export const metadata = createPageMetadata({ title: siteTitle, description: siteDescription, path: "/" });
 
 export default function Home() {
   return (

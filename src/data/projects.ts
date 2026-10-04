@@ -5,6 +5,7 @@ export type Project = {
   date?: string;
   github?: string;
   demo?: string;
+  postSlug?: string;
 };
 
 export const projects: Project[] = [
@@ -15,6 +16,7 @@ export const projects: Project[] = [
       "AI-powered marketing automation platform for generating, evaluating, publishing, forecasting, and optimizing campaigns.",
     technologies: ["Next.js", "FastAPI", "PostgreSQL", "n8n", "PyTorch", "XGBoost", "Stable Diffusion XL", "Qwen"],
     github: "https://github.com/revanthajoe/NexMarket_AI",
+    postSlug: "building-nexmarket-ai",
   },
   {
     name: "IntelliLearn",
@@ -40,5 +42,6 @@ export const projects: Project[] = [
     technologies: ["React", "Node.js", "Express", "PostgreSQL", "JWT", "Cloudinary"],
     github: "https://github.com/revanthajoe/Soosai-Hardwares",
     demo: "https://soosai-hardwares.vercel.app/",
+    postSlug: "building-soosai-hardwares",
   },
 ];
