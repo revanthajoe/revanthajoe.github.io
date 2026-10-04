@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://revanthajoe.github.io";
   return ["", "/projects", "/experience", "/posts", "/about", "/resume"].map((path) => ({ url: `${siteUrl}${path}`, lastModified: new Date() }));
 }

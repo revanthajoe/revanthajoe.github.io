@@ -27,15 +27,17 @@ npm run start
 - Education, skills, achievements, and certifications: `src/data/resume.ts`
 - Resume PDF: `public/resume.pdf`
 
-## Deploy
+## Deploy to GitHub Pages
 
-This is a Next.js App Router project and does not require a separate backend.
-Deploy it to Vercel by importing the repository or running:
+This is a static Next.js App Router export and does not require a separate backend.
+The workflow in `.github/workflows/deploy.yml` builds and deploys the `out` directory to GitHub Pages.
+
+For a local production build:
 
 ```bash
-npx vercel login
-npx vercel --prod
+$env:NEXT_PUBLIC_SITE_URL="https://revanthajoe.github.io"
+npm ci
+npm run build
 ```
 
-Set `NEXT_PUBLIC_SITE_URL` to the production URL using the example in `.env.example`.
-This value is used by metadata, `sitemap.xml`, and `robots.txt`.
+The site is deployed at https://revanthajoe.github.io.

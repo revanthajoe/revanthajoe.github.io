@@ -16,10 +16,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://revanthajoe.github.io"),
   title: {
-    default: `${profile.name} — ${profile.title}`,
-    template: `%s — ${profile.name}`,
+    default: "revanthajoe personal portfolio",
+    template: `%s | revanthajoe personal portfolio`,
   },
   description: profile.description,
   openGraph: {
