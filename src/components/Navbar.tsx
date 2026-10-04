@@ -19,7 +19,7 @@ export function Navbar() {
   return (
     <header className="site-header">
       <div className="shell nav-shell">
-        <Link className="wordmark" href="/" onClick={() => setOpen(false)} aria-label="Revanthajoe personal portfolio">R</Link>
+        <Link className="wordmark" href="/" onClick={() => setOpen(false)} aria-label="Revanth Ajoe A">Revanth Ajoe A</Link>
         <button className="menu-toggle" type="button" onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="site-navigation">
           <span>{open ? "Close" : "Menu"}</span>
         </button>
