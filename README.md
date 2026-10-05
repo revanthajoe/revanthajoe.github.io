@@ -63,7 +63,7 @@ https://revanthajoe.github.io/resume
 
 - **Portfolio:** https://revanthajoe.github.io/
 - **GitHub:** https://github.com/revanthajoe
-- **LinkedIn:** Add your LinkedIn profile URL here
+- **LinkedIn:** https://www.linkedin.com/in/revanthajoe/
 
 ## 📝 About This Repository
 
